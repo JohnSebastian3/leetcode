@@ -32,14 +32,14 @@
 
 // E: containsDuplicate([1,2,3,1]) === true
 
- var containsDuplicate = function(nums) {
-  const numArray = [];
+var containsDuplicate = function(nums) {
+  const numSet = new Set();
   let duplicate = false;
   nums.forEach(num => {
-    if(numArray.includes(num)) {
+    if(numSet.has(num)) {
       duplicate = true;
     }
-    numArray.push(num);
+    numSet.add(num);
   })
   return duplicate;
 };
