@@ -34,14 +34,14 @@
 
 var containsDuplicate = function(nums) {
   const numSet = new Set();
-  let duplicate = false;
-  nums.forEach(num => {
+
+  for(const num of nums) {
     if(numSet.has(num)) {
-      duplicate = true;
+      return true;
     }
     numSet.add(num);
-  })
-  return duplicate;
+  }
+  return false;
 };
 
 console.log(containsDuplicate([1,2,3,1]));
