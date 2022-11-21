@@ -31,14 +31,8 @@ var isAnagram = function(s, t) {
     return false;
   }
 
-    const firstLetters = s.split('');
-    const secondLetters = t.split('');
-    firstLetters.forEach(letter => {
-      if(secondLetters.includes(letter)) {
-        secondLetters.splice(secondLetters.indexOf(letter), 1);
-      }
-    })
-    return secondLetters.length === 0;
+  return s.split('').sort().join('') === t.split('').sort().join('');
+
 };
 
 console.log(isAnagram('anagram', 'nagaram'));
